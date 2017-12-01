@@ -20,7 +20,7 @@ from accounts.views import get_index
 from accounts import urls as accounts_urls
 from cards import urls as cards_urls
 from categories import urls as categories_urls
-# from checkout import urls as checkout_urls
+from checkout import urls as checkout_urls
 from cart import urls as carts_urls
 from .settings import MEDIA_ROOT
 from django.views import static
@@ -34,5 +34,5 @@ urlpatterns = [
     url(r'^categories/', include(categories_urls)),
     url(r'^media/(?P<path>.*)$', static.serve,{'document_root': MEDIA_ROOT}),
     url(r'^cart/', include(carts_urls)),
-    # url(r"^checkout/", include(checkout_urls)),
+    url(r"^checkout/", include(checkout_urls)),
 ]
