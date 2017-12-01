@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "accounts",
     "cards",
     "categories",
+    "cart",
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 "categories.views.root_categories_context",
+                "cart.contexts.cart_contents",
             ],
         },
     },
