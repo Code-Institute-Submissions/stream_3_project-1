@@ -9,6 +9,16 @@ def root_categories(request):
 
     args = { 'categories': categories, 'subcategories': {}, 'cards': {}}
     return render(request, 'categories.html', args)
+    
+def all_cards_by_occasion(request, id):
+    occasion = get_object_or_404(Category, pk=id)
+    
+    categories = Category.objects.filter(parent=occasion)
+    cards = []
+    for category in categories:
+        cards += Card.objects.filter(category=category)
+
+    return render(request, "categories.html", { "cards" : cards})
 
 
 def get_category(request, id):
