@@ -1,6 +1,7 @@
 body {
    font-family: Arial;
    padding-top: 80px;
+   background-color: black;
 }
 
 .navbar-nav>li>form {
