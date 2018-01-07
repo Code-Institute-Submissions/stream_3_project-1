@@ -170,6 +170,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')     
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  #just added this in to get the reset password working through the console. Not working through gmail for some reason. Must delete this to get it working through gmail.
 
 
 STRIPE_PUBLISHABLE = os.getenv("STRIPE_PUBLISHABLE_KEY")

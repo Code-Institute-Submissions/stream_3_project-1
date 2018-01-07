@@ -1,12 +1,7 @@
 body {
    font-family: Arial;
-   padding-top: 80px;
-   background-color: green;
-}
-
-.navbar-nav>li>form {
-    padding-top: 15px;
-    padding-bottom: 15px;
+   padding-top: 120px;
+   background-color: grey;
 }
 
 footer {

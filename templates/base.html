@@ -24,22 +24,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Cards4U</a>
+                <a class="navbar-brand" href="{% url "index" %}"><img src="/media/images/logo.png" width="100px" height="80px" alt="logo"></a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Browse All</a></li>
-                    {% for category, subcategories in root_categories.items %}
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ category.name }}<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-header"><a href="{% url 'occasion' category.id %}">{{ category.name }}</a></li>
-                            {% for sub in subcategories %}
-                            <li><a href="{% url 'category' sub.id %}">{{ sub.name }}</a></li>
-                            {% endfor%}
-                        </ul>
+                <div class="nav navbar-nav navbar-right">
+                    <li>
+                        <form action="{% url "search" %}" method="get">
+                            <input type="text" name="q">
+                            <button type="submit">Search</button>
+                        </form>
                     </li>
-                    {% endfor %}
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a></li>
                         <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Log Out</a></li>
@@ -55,7 +49,24 @@
                             {% endif %}
                         </a>
                     </li>
-                </ul>
+                    
+                    <br>
+                    
+                    <div class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#">Browse All</a></li>
+                        {% for category, subcategories in root_categories.items %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ category.name }}<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header"><a href="{% url 'occasion' category.id %}">{{ category.name }}</a></li>
+                                {% for sub in subcategories %}
+                                <li><a href="{% url 'category' sub.id %}">{{ sub.name }}</a></li>
+                                {% endfor%}
+                            </ul>
+                        </li>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
     </nav>

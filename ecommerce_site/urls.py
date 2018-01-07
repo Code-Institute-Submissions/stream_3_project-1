@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from accounts.views import get_index
-# from products.views import all_products
+from cards.views import all_cards
 from accounts import urls as accounts_urls
 from cards import urls as cards_urls
 from categories import urls as categories_urls
@@ -28,7 +28,7 @@ from django.views import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', get_index, name="index"),
+    url(r'^$', all_cards, name="index"),
     url(r"^accounts/", include(accounts_urls)),
     url(r"^cards/", include(cards_urls)),
     url(r'^categories/', include(categories_urls)),
