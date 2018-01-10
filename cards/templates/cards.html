@@ -4,16 +4,16 @@
     {% for card in cards %}
         <div class = "col-xs-12 col-sm-6 col-md-4 col-lg-4">
             <div class = "card_item">
-                <div class = "col-sm-12">
+                <div class = "col-sm-12 bold fixed-height">
                     {{ card.name }}
                 </div>
                 <div class = "col-sm-12">
-                    <img height="200" width="200" src="{{ MEDIA_URL }}{{ card.image }}">
+                    <img height="1000" width="1000" class = "img-responsive" src="{{ MEDIA_URL }}{{ card.image }}">
                 </div>
-                <div class = "col-sm-12">
+                <div class = "col-sm-12 bold">
                     {{ card.price }}
                 </div>
-                <div class = "col-sm-6 col-sm-offset-3">
+                <div class = "col-sm-12">
                     <form method="post" action="{% url 'add_to_cart' card.id %}">
                        {% csrf_token %}
                        Quantity

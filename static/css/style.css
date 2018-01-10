@@ -12,3 +12,21 @@ footer {
    color: #A9A9A9 ;
 }
 
+.bold
+{
+   font-weight: bold;
+   font-size: large;
+   /*margin-bottom: 3%;*/
+   margin-top: 3%;
+}
+
+.fixed-height
+{
+   height: 50px;
+}
+
+.push-down-searchbar
+{
+   margin-top: 5%;
+}
+
