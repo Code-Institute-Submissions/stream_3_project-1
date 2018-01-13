@@ -4,21 +4,25 @@
     {% for card in cards %}
         <div class = "col-xs-12 col-sm-6 col-md-4 col-lg-4">
             <div class = "card_item">
-                <div class = "col-sm-12 bold fixed-height">
+                <div class = "col-sm-12 bold fixed-height remove-padding">
                     {{ card.name }}
                 </div>
-                <div class = "col-sm-12">
+                <div class = "col-sm-12 img-border remove-padding">
                     <img height="1000" width="1000" class = "img-responsive" src="{{ MEDIA_URL }}{{ card.image }}">
                 </div>
-                <div class = "col-sm-12 bold">
+                <div class = "col-sm-12 bold remove-padding">
                     {{ card.price }}
                 </div>
-                <div class = "col-sm-12">
+                <div class = "col-sm-12 remove-padding">
                     <form method="post" action="{% url 'add_to_cart' card.id %}">
                        {% csrf_token %}
-                       Quantity
-                       <input name='quantity' type="number" min="1" max="999">
-                       <button type="submit">Add</button>
+                       <div class = "col-sm-6 form-quanity">
+                           Quantity
+                           <input name='quantity' type="number" min="1" max="999">
+                       </div>
+                       <div class = "col-sm-6 form">
+                           <button type="submit" class="btn btn-info btn-block">Add</button>
+                       </div>
                    </form>
                 </div>
             </div>
