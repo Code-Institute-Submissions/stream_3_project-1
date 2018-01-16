@@ -28,20 +28,20 @@
             </div>
             <div class="navbar-collapse collapse">
                 <div class="nav navbar-nav navbar-right">
-                    <li>
+                    <li class="top-nav">
                         <form class="push-down-searchbar" action="{% url "search" %}" method="get">
                             <input type="text" name="q">
                             <button type="submit" class="btn btn-success">Search</button>
                         </form>
                     </li>
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a></li>
-                        <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Log Out</a></li>
+                        <li class="top-nav"><a href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a></li>
+                        <li class="top-nav"><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Log Out</a></li>
                     {%  else %}
-                        <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
-                        <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Log In</a></li>
+                        <li class="top-nav"><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
+                        <li class="top-nav"><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Log In</a></li>
                     {% endif %}
-                    <li>
+                    <li class="top-nav">
                         <a href="{% url 'view_cart' %}">
                             <i class="fa fa-shopping-cart"></i> Cart 
                             {% if card_count > 0 %}
@@ -53,19 +53,19 @@
                     <br>
                     
                     <div class="nav navbar-nav navbar-right">
-                        <li><a href="#">Browse All</a></li>
+                        <li class="bottom-nav"><a href="#">Browse All</a></li>
                         {% for category, subcategories in root_categories.items %}
-                        <li class="dropdown">
+                        <li class="dropdown bottom-nav">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ category.name }}<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li class="dropdown-header"><a href="{% url 'occasion' category.id %}">{{ category.name }}</a></li>
+                                <li><a href="{% url 'occasion' category.id %}" class="dropdown-header">All {{ category.name }} Cards</a></li>
                                 {% for sub in subcategories %}
                                 <li><a href="{% url 'category' sub.id %}">{{ sub.name }}</a></li>
                                 {% endfor%}
                             </ul>
                         </li>
                         {% endfor %}
-                        <li><a href="#">Contact</a></li>
+                        <li class="bottom-nav"><a href="#">Contact</a></li>
                     </div>
                 </div>
             </div>

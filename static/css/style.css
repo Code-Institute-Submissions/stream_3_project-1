@@ -1,7 +1,7 @@
 body {
    font-family: Arial;
    padding-top: 120px;
-   background-color: red;
+   background-color: #fafafa;
    
 }
 
@@ -89,6 +89,21 @@ footer {
     padding-right: 0px;
 }
 
+.fixed-height
+{
+    height: 30px;
+}
+
+.accountform
+{
+    text-align: center;
+}
+
+.accountform #id_email
+{
+    
+}
+
 /*---------------------------------------------navigation----------------------------------------------*/
 
 .navbar-inverse
@@ -121,7 +136,7 @@ footer {
 .push-down-searchbar
 {
    margin-top: 3%;
-   padding-left: 120px;
+   padding-left: 70px;
    
 }
 
@@ -134,6 +149,11 @@ footer {
    margin-right: 0px;
 }
 
+.dropdown-header
+{
+    padding-left: 0px;
+}
+
 
 @media (max-width: 767px)
 {
@@ -141,12 +161,67 @@ footer {
    {
       max-width: 50%;
       height: auto;
+    }
+    
+    .navbar-header
+    {
+        height: 80px;
+    }
+    
+    .navbar-toggle
+    {
+        margin-top: 25px;
+    }
+   
+   .form
+   {
+       margin-top: 2%;
    }
+   
+   .accountform
+   {
+       text-align: left;
+   }
+   
+   .accountform #id_email
+    {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .accountform p
+    {
+        margin-top: 20px;
+    }
+    
 }
 
-/*img[Attributes Style] */
-/*   {*/
-/*       width: 100px;*/
-/*       height: 80px;*/
-/*   }*/
 
+
+@media (min-width: 768px) and (max-width: 991px)
+{
+    
+}
+
+@media (max-width: 767px)
+{
+    .bottom-nav
+    {
+        margin-left: 15px;
+    }
+    
+    .dropdown-header
+    {
+        padding-left: 0px;
+    }
+    
+    body
+    {
+        padding-top: 80px;
+    }
+    
+    .push-down-searchbar
+    {
+        padding-left: 15px;
+    }
+}
