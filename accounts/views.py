@@ -28,7 +28,7 @@ def login(request):
                     next = request.GET['next']
                     return HttpResponseRedirect(next)
                 else:
-                    return redirect(profile)
+                    return redirect('index')
                     
             else:
                 form.add_error(None, "Your username or password was not registered") #error message not working. will come back to it

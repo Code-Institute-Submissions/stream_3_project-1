@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", True)
-USE_S3 = os.environ.get("USE_S3", False)
+USE_S3 = os.environ.get("USE_S3", True)
 
 ALLOWED_HOSTS = ['stream-3-project-declanmunroe.c9users.io', "com-munroe-cards4u.herokuapp.com"]
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "cart",
     "checkout",
     "storages",
+    "contact",
 ]
 
 MIDDLEWARE = [
@@ -162,7 +163,7 @@ if USE_S3:
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
 
-EMAIL_USE_TLS = True       
+EMAIL_USE_TLS = True      
 EMAIL_HOST = 'smtp.gmail.com'      
 EMAIL_PORT = 587     
 # DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')   
@@ -170,7 +171,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')     
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  #just added this in to get the reset password working through the console. Not working through gmail for some reason. Must delete this to get it working through gmail.
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  #just added this in to get the reset password working through the console. Not working through gmail for some reason. Must delete this to get it working through gmail.
 
 
 STRIPE_PUBLISHABLE = os.getenv("STRIPE_PUBLISHABLE_KEY")
