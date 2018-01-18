@@ -29,7 +29,7 @@ from django.views import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', all_cards, name="index"),
+    url(r'^$', get_index, name="index"),
     url(r"^accounts/", include(accounts_urls)),
     url(r"^cards/", include(cards_urls)),
     url(r'^categories/', include(categories_urls)),

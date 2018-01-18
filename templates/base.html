@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url "index" %}"><img src="/media/images/logo.png" class="img-resize" width="100px" height="80px" alt="logo"></a>
+                <a class="navbar-brand" href="{% url 'index' %}"><img src="/media/images/logo.png" class="img-resize" width="100px" height="80px" alt="logo"></a>
             </div>
             <div class="navbar-collapse collapse">
                 <div class="nav navbar-nav navbar-right">
@@ -53,7 +53,7 @@
                     <br>
                     
                     <div class="nav navbar-nav navbar-right">
-                        <li class="bottom-nav"><a href="#">Browse All</a></li>
+                        <li class="bottom-nav"><a href="{% url 'all_cards' %}">Browse All</a></li>
                         {% for category, subcategories in root_categories.items %}
                         <li class="dropdown bottom-nav">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ category.name }}<b class="caret"></b></a>

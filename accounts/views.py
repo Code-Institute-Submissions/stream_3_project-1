@@ -10,7 +10,7 @@ def get_index(request):
 def logout(request):
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
-    return redirect("login")
+    return redirect("index")
     
 def login(request):
     if request.method == "POST":
@@ -28,7 +28,7 @@ def login(request):
                     next = request.GET['next']
                     return HttpResponseRedirect(next)
                 else:
-                    return redirect('index')
+                    return redirect('all_cards')
                     
             else:
                 form.add_error(None, "Your username or password was not registered") #error message not working. will come back to it
