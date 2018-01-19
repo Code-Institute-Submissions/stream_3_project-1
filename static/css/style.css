@@ -1,21 +1,32 @@
+html {
+    height: 100%;
+}
+
 body {
    font-family: Arial;
    padding-top: 120px;
    background-color: #fafafa;
+   position: relative;
+   min-height: 100%;
+   padding-bottom: 90px;
    
 }
 
 /*---------------------------------------------footer--------------------------------------------------*/
 
-footer {
+.footer-details {
    background-color: #f47742;
    color: black ;
    margin-top: 3%;
+   position: absolute;
+   bottom: 0px;
+   width: 100%
 }
 
 .center
 {
    text-align: center;
+   padding-top: 15px;
 }
 
 .inline-block
@@ -25,7 +36,7 @@ footer {
 
 .social-links
 {
-    padding-bottom: 15px;
+    padding-bottom: 5px;
 }
 
 .social-links li a i

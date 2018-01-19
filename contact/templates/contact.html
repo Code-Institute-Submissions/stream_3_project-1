@@ -3,14 +3,14 @@
 
 {% block content %}
 <div class="row">
-        <div class="col-sm-12">
-            <h1> Contact Form </h1>
-            <form role="form" action="{% url 'contact' %}" method="POST">
-                {% csrf_token %}
-                {{ form | as_bootstrap }}
-                <button class="btn btn-lg btn-success" type="submit">Submit</button>
-            </form>
-        </div>
+    <div class = "col-xs-12 col-sm-6 col-sm-offset-3">
+        <h1> Contact Form </h1>
+        <form role="form" action="{% url 'contact' %}" method="POST">
+            {% csrf_token %}
+            {{ form | as_bootstrap }}
+            <button class="btn btn-lg btn-success" type="submit">Submit</button>
+        </form>
+    </div>
 </div>
 
 {% endblock %}
