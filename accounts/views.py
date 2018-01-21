@@ -10,7 +10,7 @@ def get_index(request):
 def logout(request):
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
-    return redirect("index")
+    return redirect('all_cards')
     
 def login(request):
     if request.method == "POST":
@@ -50,7 +50,7 @@ def register(request):
             
             if user is not None:
                 auth.login(request, user)
-                return redirect('index')
+                return redirect('all_cards')
     else:
         form = UserRegistrationForm()
         

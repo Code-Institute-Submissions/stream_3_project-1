@@ -24,8 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", True)
-USE_S3 = os.environ.get("USE_S3", False)
+DEBUG = os.environ.get("DEBUG", False)
+USE_S3 = os.environ.get("USE_S3", True)
 
 ALLOWED_HOSTS = ['stream-3-project-declanmunroe.c9users.io', "com-munroe-cards4u.herokuapp.com"]
 

@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url="/accounts/login")
 def view_cart(request):
     """A view that renders the cart contents page"""
     return render(request, "cart.html")
-
 
 def add_to_cart(request, id):
     """Add a quantity of the specified product to the cart"""
@@ -14,7 +15,7 @@ def add_to_cart(request, id):
     cart[id] = cart.get(id, quantity)
     
     request.session['cart'] = cart    
-    return redirect(reverse('index'))
+    return redirect(reverse('all_cards'))
 
 
 def adjust_cart(request, id):
